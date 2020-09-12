@@ -1,24 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
+import "./App.css";
+import Forms from "./Components/Forms";
+import Items from "./Components/Items";
 
 function App() {
+  // states
+  const [inputText, setInputText] = useState("")
+  const [status, setStatus] = useState("all")
+  const [textArea, setTextArea] = useState("")
+  const [list, setList] = useState([])
+  const [filtered, setFiltered] = useState([])
+
+  // functions
+  useEffect(() => {
+    filterHandler()
+  }, [list, status])
+
+  const filterHandler = () => {
+    switch(status){
+      case "completed": 
+        setFiltered(list.filter((listie) => listie.completed === true))
+        break
+      case "uncompleted": 
+        setFiltered(list.filter((listie) => listie.completed === false))
+        break
+      default: 
+        setFiltered(list)
+        break
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <center>
+            <h1>Hello there! welcome to my taskForce</h1>
+            <Forms  textArea={textArea} setTextArea={setTextArea} 
+                    inputText={inputText} setInputText={setInputText} 
+                    list={list} setList={setList} status={status} setStatus={setStatus}/>
+              <br />
+            <Items filtered={filtered} list={list} setList = {setList} />
+      </center>
     </div>
   );
 }

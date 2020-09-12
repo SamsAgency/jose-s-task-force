@@ -1,0 +1,51 @@
+.forms {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: center;
+}
+
+.form-selectables {
+    display: flex;
+    justify-content: center;
+}
+
+.selectables{
+    margin-left: 5px;
+}
+
+.input-text {
+    padding: 5px;
+}
+
+.textarea{
+    padding: 5px;
+    text-align: center;
+}
+
+.legends {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button{
+    padding: 5px;
+    width: 10vw;
+    align-self: center;
+}
+
+@media screen and (max-width: 720px){
+    .form-selectables{
+        display: block;
+    }
+    .selectables{
+        margin-top: 10px;
+    }
+    .button{
+        width: 60px
+    }
+}

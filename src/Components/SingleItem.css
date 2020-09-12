@@ -1,0 +1,33 @@
+.singleitem{
+    background-color: #4253eb;
+    margin: 10px;
+    text-align: center;
+    width: 220px;
+    padding: 10px;
+    color: white
+}
+
+.content-paragraph {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.button{
+    padding: 5px;
+    width: 5vw;
+    align-self: center;
+}
+
+.completed {
+    background-color: #909197;
+    margin: 10px;
+    text-align: center;
+    width: 220px;
+    padding: 10px;
+    color: white;
+    text-decoration: line-through;
+}
